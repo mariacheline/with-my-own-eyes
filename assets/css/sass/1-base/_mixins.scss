@@ -1,0 +1,56 @@
+/* centers an element */
+@mixin center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin ul-reset{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+    line-height: 1.1;
+    padding: 0 .30em;
+    display: inline-block;
+  }
+}
+
+/* Media queries */
+@mixin custom__iphone {
+	@media (min-width: 320px) {
+  	@content;
+  }
+}
+
+@mixin custom__iphone--landscape {
+	@media (min-width: 320px) and (orientation: landscape) {
+  	@content;
+  }
+}
+
+@mixin small__phones {
+	@media (min-width: 480px) {
+  	@content;
+  }
+}
+
+@mixin small__tablet {
+	 @media (min-width: 720px) {
+  	@content;
+  }
+}
+
+@mixin medium__desktops {
+	 @media (min-width: 992px) {
+  	@content;
+  }
+}
+
+@mixin widescreen__desktops {
+	 @media (min-width: 1200px) {
+  	@content;
+  }
+}

@@ -1,0 +1,341 @@
+@import '0-plugins/bourbon/bourbon';
+@import '0-plugins/animate';
+@import '1-base/variables';
+@import '1-base/mixins';
+@import '1-base/base';
+
+
+.slide-module {
+	background: #f85032;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0s ease;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+
+	@include medium__desktops {
+		background-color: rgba(0, 0, 0, .8);
+		right: -50%;
+		width: 50%;
+	}
+
+	&.show {
+		right: 0;
+	}
+}
+
+.call-to-action {
+	position: absolute;
+  right: 0;
+  top: 0;
+	left: -180px;
+	padding: .50em 1em;
+
+	@include custom__iphone--landscape {
+		top: -10px;
+		left: -200px;
+	}
+
+	@media (min-width: 600px) {
+		left: -190px;
+	}
+
+	@include small__tablet {
+		left: -200px;
+	}
+
+	@include medium__desktops {
+		left: -220px;
+	}
+
+	.fa {
+		margin: 0 .50em;
+		font-size: 18px;
+		cursor: pointer;
+	}
+}
+
+.info-container {
+	margin: 1em .50em;
+
+	@include medium__desktops {
+		margin: 1em;
+	}
+
+	&__about {
+		display: block;
+
+		*&.show__info-content {
+			display: none;
+		}
+
+		h2 {
+			font-size: 1rem;
+			margin-bottom: 1em;
+
+			@include custom__iphone--landscape {
+				font-size: .65rem;
+			}
+
+			@include medium__desktops {
+				font-size: .90rem;
+			}
+		}
+
+		p {
+			font-size: .85rem;
+			line-height: normal;
+			text-align: left;
+
+			@include custom__iphone {
+				font-size: .65rem;
+			}
+
+			@include custom__iphone--landscape {
+				font-size: .50rem;
+			}
+
+			@include medium__desktops {
+				font-size: .70rem;
+			}
+		}
+	}
+
+
+	&__form {
+		display: none;
+		animation-delay: 0s;
+
+		&.show__info-content {
+			display: block;
+		}
+
+		@include custom__iphone--landscape{
+			margin: 0 .50em;
+		}
+
+		input, textarea {
+			background-color: transparent;
+			border: none;
+			border-bottom: 2px solid $color__light;
+			color: inherit;
+			padding: .20em;
+			width: 100%;
+			margin: 2em auto;
+			font-family: inherit;
+
+			@include custom__iphone--landscape{
+				margin: 0 auto;
+			}
+
+			@include medium__desktops {
+				margin: 2em auto;
+			}
+		}
+
+		button {
+			background-color: $color__theme;
+			border: none;
+		  color: inherit;
+			padding: .80em;
+			font-size: .70rem;
+			text-transform: uppercase;
+			align-self: center;
+			cursor: pointer;
+			display: block;
+			margin: 0 auto;
+
+			@include custom__iphone--landscape{
+				font-size: .50rem;
+			}
+
+			&:hover {
+				background-color: shade($color__theme, 20%);
+			}
+		}
+	}
+}
+
+.main-content {
+	width: 100%;
+	text-align: center;
+	padding: .20em;
+
+	@include medium__desktops {
+		width: 50%;
+		text-align: left;
+		margin-left: 5em;
+	}
+
+	&__title {
+		font-size: 2.5rem;
+		font-weight: 900;
+
+		@include custom__iphone--landscape {
+			font-size: 1.5rem;
+		}
+
+		@include small__tablet {
+			font-size: 2.5rem;
+		}
+
+		@include medium__desktops {
+			font-size: 3.5rem;
+		}
+	}
+
+	.sub-container {
+		min-height: 120px;
+		margin-top: .50em;
+
+		@include custom__iphone--landscape {
+			min-height: 90px;
+			margin-top: .20em;
+		}
+
+		@include medium__desktops {
+			min-height: 130px;
+		}
+	}
+
+	&__subtitle {
+		font-size: .68rem;
+
+		@include custom__iphone--landscape {
+			font-size: .50rem;
+		}
+
+		@include small__tablet {
+			font-size: .60rem;
+			padding: .60em 0;
+		}
+
+		@include medium__desktops {
+			font-size: .70rem;
+		}
+	}
+
+	&__btn {
+		background-color: $color__theme;
+		border: none;
+	  color: inherit;
+		padding: .80em;
+		font-size: .50rem;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		@include custom__iphone--landscape {
+			font-size: .35rem;
+		}
+
+		@include small__tablet {
+			font-size: .50rem;
+		}
+
+		@include medium__desktops {
+			font-size: .55rem;
+		}
+
+		&:hover {
+			background-color: shade($color__theme, 20%);
+		}
+
+	}
+}
+
+.mail-list {
+	display: none; //flex;
+	justify-content: center;
+	flex-flow: column wrap;
+
+	&__email-input {
+		background-color: transparent;
+		border: none;
+		border-bottom: 2px solid $color__light;
+		color: inherit;
+		padding: .20em;
+		margin-right: .50em;
+		animation-delay: 0s;
+		width: 75%;
+
+		@include custom__iphone--landscape {
+			width: 60%;
+		}
+
+		@include small__tablet {
+			font-size: .80rem;
+			width: 50%;
+		}
+
+		@include medium__desktops {
+			font-size: .75rem;
+			width: 80%;
+		}
+	}
+
+	&__close-icon {
+		cursor: pointer;
+		animation-delay: 0s;
+	}
+
+	&__btn {
+		@extend .main-content__btn;
+		width: 20%;
+		align-self: center;
+		animation-delay: 0s;
+		margin-top: .50em;
+
+		@include custom__iphone--landscape {
+			font-size: .35rem;
+		}
+
+		@include small__tablet {
+			font-size: .50rem;
+			width: 10%;
+		}
+
+		@include medium__desktops {
+			align-self: flex-start;
+			font-size: .50rem;
+			width: 20%;
+		}
+	}
+}
+
+footer {
+	color: shade($color__light, 20%);
+	text-transform: uppercase;
+	font-size: .50rem;
+	position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+	text-align: center;
+
+	@include custom__iphone--landscape {
+		font-size: .38rem;
+	}
+
+	@include medium__desktops {
+		text-align: right;
+		margin-right: 2em;
+		font-size: .50rem;
+	}
+}
+
+.main-background {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	@include position (fixed, 50% null null 50%);
+	transform: translate(-50%, -50%);
+	z-index: -10000;
+}

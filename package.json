@@ -1,0 +1,37 @@
+{
+  "name": "with-my-own-eyes",
+  "version": "1.0.0",
+  "description": "Landing page for with my own eyes game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "with",
+    "my",
+    "own",
+    "eyes",
+    "wmoe",
+    "with",
+    "my",
+    "own",
+    "eyes",
+    "game",
+    "indie",
+    "game",
+    "indie",
+    "dev",
+    "game",
+    "developer"
+  ],
+  "author": "mariacheline",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-sass": "^3.1.0"
+  }
+}
