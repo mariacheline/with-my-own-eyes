@@ -2515,10 +2515,9 @@ em, strong {
     .info-container {
       margin: 1em; } }
   .info-container__about {
-    display: block;
-    /*&.show__info-content {
-			display: none;
-		}*/ }
+    display: block; }
+    .info-container__about.show__info-content {
+      display: none; }
     .info-container__about h2 {
       font-size: 1rem;
       margin-bottom: 1em; }
@@ -2544,10 +2543,9 @@ em, strong {
   .info-container__form {
     display: none;
     -webkit-animation-delay: 0s;
-            animation-delay: 0s;
-    /*&.show__info-content {
-			display: block;
-		}*/ }
+            animation-delay: 0s; }
+    .info-container__form.show__info-content {
+      display: block; }
     @media (min-width: 320px) and (orientation: landscape) {
       .info-container__form {
         margin: 0 .50em; } }
