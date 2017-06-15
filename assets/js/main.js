@@ -23,6 +23,7 @@ $(document).ready(function(){
 
 	$('.fa-info--clicked').click(function() {
 		$(this).toggleClass('fa-info fa-close');
+		$(this).data('infoClicked', true);
 		$('.slide-module').toggleClass('show');
 	})
 
@@ -31,4 +32,5 @@ $(document).ready(function(){
 		$('.slide-module').toggleClass('show');
 		$('.info-container__about, .info-container__form').toggleClass('show__info-content');
 	});
+
 });
