@@ -72,7 +72,7 @@
 	&__about {
 		display: block;
 
-		*&.show__info-content {
+		&.show__info-content {
 			display: none;
 		}
 
