@@ -2616,7 +2616,9 @@ em, strong {
       .main-content .sub-container {
         min-height: 130px; } }
   .main-content__subtitle {
-    font-size: .68rem; }
+    font-size: .68rem;
+    padding-left: 1em;
+    padding-right: 1em; }
     @media (min-width: 320px) and (orientation: landscape) {
       .main-content__subtitle {
         font-size: .50rem; } }
