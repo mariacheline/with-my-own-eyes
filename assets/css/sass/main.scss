@@ -38,6 +38,10 @@
 	left: -180px;
 	padding: .50em 1em;
 
+	&.show {
+		left: auto;
+	}
+
 	@include custom__iphone--landscape {
 		top: -10px;
 		left: -200px;
@@ -71,10 +75,7 @@
 
 	&__about {
 		display: block;
-
-		&.show__info-content {
-			display: none;
-		}
+		animation-delay: 0s;
 
 		h2 {
 			font-size: 1rem;
@@ -112,10 +113,6 @@
 	&__form {
 		display: none;
 		animation-delay: 0s;
-
-		&.show__info-content {
-			display: block;
-		}
 
 		@include custom__iphone--landscape{
 			margin: 0 .50em;

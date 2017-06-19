@@ -2491,6 +2491,8 @@ em, strong {
   top: 0;
   left: -180px;
   padding: .50em 1em; }
+  .call-to-action.show {
+    left: auto; }
   @media (min-width: 320px) and (orientation: landscape) {
     .call-to-action {
       top: -10px;
@@ -2515,9 +2517,9 @@ em, strong {
     .info-container {
       margin: 1em; } }
   .info-container__about {
-    display: block; }
-    .info-container__about.show__info-content {
-      display: none; }
+    display: block;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s; }
     .info-container__about h2 {
       font-size: 1rem;
       margin-bottom: 1em; }
@@ -2544,8 +2546,6 @@ em, strong {
     display: none;
     -webkit-animation-delay: 0s;
             animation-delay: 0s; }
-    .info-container__form.show__info-content {
-      display: block; }
     @media (min-width: 320px) and (orientation: landscape) {
       .info-container__form {
         margin: 0 .50em; } }

@@ -21,16 +21,35 @@ $(document).ready(function(){
 		});
 	});
 
-	$('.fa-info--clicked').click(function() {
-		$(this).toggleClass('fa-info fa-close');
-		$(this).data('infoClicked', true);
-		$('.slide-module').toggleClass('show');
-	})
+	var module = {
+		active: "",
+		open: false
+	}
 
-	$('.fa-envelope-o--clicked').click(function(){
-		$(this).toggleClass('fa-envelope-o fa-close');
-		$('.slide-module').toggleClass('show');
-		$('.info-container__about, .info-container__form').toggleClass('show__info-content');
+	var state = function (act) {
+		if (module.active === "info") {
+			$('.fa-info--clicked').toggleClass('fa-info fa-close');
+			$('.slide-module, .call-to-action').toggleClass('show');
+			module.open = true;
+			$('.info-container__about').show();
+			$('.info-container__form').hide();
+		} else if (module.active === "mail") {
+			$('.fa-envelope-o--clicked').toggleClass('fa-envelope-o fa-close');
+			$('.slide-module, .call-to-action').toggleClass('show');
+			module.open = true;
+			$('.info-container__about').hide();
+			$('.info-container__form').show();
+		}
+	}
+
+	$('.fa-info--clicked').click(function() {
+		module.active = "info";
+		state("info");
+	});
+
+	$('.fa-envelope-o--clicked').click(function() {
+		module.active = "mail";
+		state("mail");
 	});
 
 });
