@@ -21,35 +21,36 @@ $(document).ready(function(){
 		});
 	});
 
+/** slide module script **/
 	var module = {
 		active: "",
 		open: false
 	}
 
-	var state = function (act) {
+	var moduleState = function (act) {
 		if (module.active === "info") {
 			$('.fa-info--clicked').toggleClass('fa-info fa-close');
-			$('.slide-module, .call-to-action').toggleClass('show');
-			module.open = true;
 			$('.info-container__about').show();
 			$('.info-container__form').hide();
 		} else if (module.active === "mail") {
 			$('.fa-envelope-o--clicked').toggleClass('fa-envelope-o fa-close');
-			$('.slide-module, .call-to-action').toggleClass('show');
-			module.open = true;
 			$('.info-container__about').hide();
 			$('.info-container__form').show();
 		}
 	}
 
 	$('.fa-info--clicked').click(function() {
+		$('.slide-module, .call-to-action').addClass('show');
+		module.open = true;
 		module.active = "info";
-		state("info");
+		moduleState("info");
 	});
 
 	$('.fa-envelope-o--clicked').click(function() {
+		$('.slide-module, .call-to-action').addClass('show');
+		module.open = true;
 		module.active = "mail";
-		state("mail");
+		moduleState("mail");
 	});
 
 });

@@ -2710,7 +2710,7 @@ em, strong {
         width: 20%; } }
 
 footer {
-  color: #cccccc;
+  color: #b3b3b3;
   text-transform: uppercase;
   font-size: .50rem;
   position: absolute;
@@ -2725,7 +2725,9 @@ footer {
     footer {
       text-align: right;
       margin-right: 2em;
-      font-size: .50rem; } }
+      bottom: 8px;
+      font-size: .38rem;
+      letter-spacing: 1px; } }
 
 .main-background {
   min-width: 100%;
