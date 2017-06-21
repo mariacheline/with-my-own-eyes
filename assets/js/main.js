@@ -28,12 +28,14 @@ $(document).ready(function(){
 	}
 
 	var moduleState = function (act) {
-		if (module.active === "info") {
-			$('.fa-info--clicked').toggleClass('fa-info fa-close');
+		if (module.active === "info" || $('.fa-envelope-o--clicked').hasClass('fa-close')) {
+			$('.fa-envelope-o--clicked').addClass('fa-envelope-o').removeClass('fa-close');
+			$('.fa-info--clicked').removeClass('fa-info').addClass('fa-close');
 			$('.info-container__about').show();
 			$('.info-container__form').hide();
-		} else if (module.active === "mail") {
-			$('.fa-envelope-o--clicked').toggleClass('fa-envelope-o fa-close');
+		} else if (module.active === "mail" || $('.fa-info--clicked').hasClass('fa-close')) {
+			$('.fa-info--clicked').removeClass('fa-close').addClass('fa-info');
+			$('.fa-envelope-o--clicked').removeClass('fa-envelope-o').addClass('fa-close');
 			$('.info-container__about').hide();
 			$('.info-container__form').show();
 		}
@@ -52,5 +54,19 @@ $(document).ready(function(){
 		module.active = "mail";
 		moduleState("mail");
 	});
+
+	/*if ($('.fa-info--clicked').hasClass('fa-close')) {
+		$('.fa-info--clicked').click(function(){
+			module.active = "info-close";
+			moduleState("info-close");
+		});
+	}
+
+	if ($('.fa-envelope-o--clicked').hasClass('fa-close')) {
+		$('.fa-envelope-o--clicked').click(function(){
+			module.active = "mail-close";
+			moduleState("mail-close");
+		});
+	}*/
 
 });
