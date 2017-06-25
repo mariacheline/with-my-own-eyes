@@ -22,59 +22,36 @@ $(document).ready(function(){
 	});
 
 /** slide module script **/
-
-	/*var moduleState = function (active) {
-		if (active === "info" || $('.fa-envelope-o--clicked').hasClass('fa-close')) {
-			console.log(active);
-			$('.fa-envelope-o--clicked').removeClass('fa-close').addClass('fa-envelope-o');
-			$('.fa-info--clicked').removeClass('fa-info').addClass('fa-close');
-			$('.slide-module, .call-to-action').addClass('show');
-			$('.info-container__about').show();
-			$('.info-container__form').hide();
-		} else if (active === "mail" || $('.fa-info--clicked').hasClass('fa-close')) {
-			console.log(active);
-			$('.fa-info--clicked').removeClass('fa-close').addClass('fa-info');
-			$('.fa-envelope-o--clicked').removeClass('fa-envelope-o').addClass('fa-close');
-			$('.slide-module, .call-to-action').addClass('show');
-			$('.info-container__about').hide();
-			$('.info-container__form').show();
-		} else if (($('.fa-info--clicked').hasClass('fa-close') || $('.fa-envelope-o--clicked').hasClass('fa-close')) && $('.slide-module, call-to-action').hasClass('show')) {
-			console.log(active);
-			$('.fa-close').click(function(){
-				$('.slide-module, .call-to-action').removeClass('show');
-			})
-		}
-	}
-
-	$('.fa-info').click(function() {
-		moduleState("info");
-	});
-
-	$('.fa-envelope-o').click(function() {
-		moduleState("mail");
-	});*/
-
-
   var info = $('.fa-info--clicked');
 	var mail = $('.fa-envelope-o--clicked');
 
-	if (info.hasClass('fa-info')) {
-		info.click(function(){
-			info.removeClass('fa-info').addClass('fa-close');
-			mail.removeClass('fa-close').addClass('fa-envelope-o');
-			$('.info-container__about').show();
+	info.click(function(){
+		if($(this).hasClass('fa-close')) {
+			$(this).removeClass('fa-close').addClass('fa-info')
 			$('.info-container__form').hide();
-			$('.slide-module, .call-to-action').addClass('show');
-		});
-	}
-
-	if (mail.hasClass('fa-envelope-o')) {
-		mail.click(function(){
-			mail.removeClass('fa-envelope-o').addClass('fa-close');
-			info.removeClass('fa-close').addClass('fa-info');
 			$('.info-container__about').hide();
-			$('.info-container__form').show();
-			$('.slide-module, .call-to-action').addClass('show');
-		});
-	}
+			$('.slide-module, .call-to-action').removeClass('show');
+			return
+		}
+		info.removeClass('fa-info').addClass('fa-close');
+		mail.removeClass('fa-close').addClass('fa-envelope-o');
+		$('.info-container__about').show();
+		$('.info-container__form').hide();
+		$('.slide-module, .call-to-action').addClass('show');
+	});
+
+	mail.click(function(){
+		if($(this).hasClass('fa-close')) {
+			$(this).removeClass('fa-close').addClass('fa-envelope-o')
+			$('.info-container__form').hide();
+			$('.info-container__about').hide();
+			$('.slide-module, .call-to-action').removeClass('show');
+			return
+		}
+		info.removeClass('fa-close').addClass('fa-info');
+		mail.removeClass('fa-envelope-o').addClass('fa-close');
+		$('.info-container__about').hide();
+		$('.info-container__form').show();
+		$('.slide-module, .call-to-action').addClass('show');
+	});
 });
