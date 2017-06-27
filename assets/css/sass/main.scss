@@ -4,11 +4,10 @@
 @import '1-base/mixins';
 @import '1-base/base';
 
-
 .slide-module {
 	background: #f85032;
   background-color: rgba(0, 0, 0, 1);
-  z-index: 1000;
+  z-index: 1;
   position: fixed;
   top: 0;
   right: -100%;
@@ -74,8 +73,17 @@
 	}
 
 	&__about {
+		margin: 0 auto;
 		display: block;
 		animation-delay: 0s;
+
+		@media (min-width: 680px) {
+			width: 70%;
+		}
+
+		@include medium__desktops {
+			width: 100%;
+		}
 
 		h2 {
 			font-size: 1rem;
@@ -86,7 +94,7 @@
 			}
 
 			@include medium__desktops {
-				font-size: .90rem;
+				font-size: .75rem;
 			}
 		}
 
@@ -104,7 +112,7 @@
 			}
 
 			@include medium__desktops {
-				font-size: .70rem;
+				font-size: .60rem;
 			}
 		}
 	}
@@ -118,6 +126,8 @@
 			margin: 0 .50em;
 		}
 
+
+
 		input, textarea {
 			background-color: transparent;
 			border: none;
@@ -130,6 +140,10 @@
 
 			@include custom__iphone--landscape{
 				margin: 0 auto;
+			}
+
+			@media (min-width: 680px) {
+				margin: 3em auto;
 			}
 
 			@include medium__desktops {
@@ -164,11 +178,18 @@
 	width: 100%;
 	text-align: center;
 	padding: .20em;
+	transition: all .2s ease;
 
 	@include medium__desktops {
 		width: 50%;
 		text-align: left;
 		margin-left: 5em;
+
+		&.show {
+			width: 60%;
+			padding-right: 250px;
+			margin-left: 3em;
+		}
 	}
 
 	&__title {
@@ -185,6 +206,10 @@
 
 		@include medium__desktops {
 			font-size: 3.5rem;
+
+			&.show {
+				font-size: 2.8rem;
+			}
 		}
 	}
 
@@ -218,6 +243,10 @@
 
 		@include medium__desktops {
 			font-size: .70rem;
+
+			&.show {
+				font-size: .60rem;
+			}
 		}
 	}
 
@@ -226,7 +255,8 @@
 		border: none;
 	  color: inherit;
 		padding: .80em;
-		font-size: .50rem;
+		margin-top: 1.5em;
+		font-size: .60rem;
 		text-transform: uppercase;
 		cursor: pointer;
 
@@ -289,7 +319,7 @@
 		width: 20%;
 		align-self: center;
 		animation-delay: 0s;
-		margin-top: .50em;
+		margin-top: 2.4em;
 
 		@include custom__iphone--landscape {
 			font-size: .35rem;
