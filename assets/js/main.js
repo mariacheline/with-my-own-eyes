@@ -27,11 +27,9 @@ $(document).ready(function(){
 
 	info.click(function(){
 		if($(this).hasClass('fa-close')) {
-			$(this).removeClass('fa-close').addClass('fa-info')
-			$('.info-container__form').hide();
-			$('.info-container__about').hide();
+			$(this).removeClass('fa-close').addClass('fa-info');
 			$('.slide-module, .call-to-action, .main-content, .main-content__title, .main-content__subtitle').removeClass('show');
-			return
+			return;
 		}
 		info.removeClass('fa-info').addClass('fa-close');
 		mail.removeClass('fa-close').addClass('fa-envelope-o');
@@ -42,11 +40,9 @@ $(document).ready(function(){
 
 	mail.click(function(){
 		if($(this).hasClass('fa-close')) {
-			$(this).removeClass('fa-close').addClass('fa-envelope-o')
-			$('.info-container__form').hide();
-			$('.info-container__about').hide();
+			$(this).removeClass('fa-close').addClass('fa-envelope-o')<
 			$('.slide-module, .call-to-action, .main-content, .main-content__title, .main-content__subtitle').removeClass('show');
-			return
+			return;
 		}
 		info.removeClass('fa-close').addClass('fa-info');
 		mail.removeClass('fa-envelope-o').addClass('fa-close');
