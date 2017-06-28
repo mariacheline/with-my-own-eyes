@@ -2611,7 +2611,8 @@ em, strong {
         margin-left: 3em; } }
   .main-content__title {
     font-size: 2.5rem;
-    font-weight: 900; }
+    font-weight: 900;
+    margin: 0; }
     @media (min-width: 320px) and (orientation: landscape) {
       .main-content__title {
         font-size: 1.5rem; } }
