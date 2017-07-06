@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-	/* animation for notify selection */
+	/* animation for switching between get notified and mail list input
+	*/
 	$('.main-content__btn').click(function(){
 		$(this).data('clicked', true);
 
