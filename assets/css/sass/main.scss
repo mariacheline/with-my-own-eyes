@@ -1,8 +1,8 @@
 @import '0-plugins/bourbon/bourbon';
-@import '0-plugins/animate';
-@import '1-base/variables';
-@import '1-base/mixins';
-@import '1-base/base';
+@import '0-plugins/_animate.scss';
+@import '1-base/_variables.scss';
+@import '1-base/_mixins.scss';
+@import '1-base/_base.scss';
 
 .slide-module {
 	background: #f85032;
@@ -150,6 +150,11 @@
 				margin: 2em auto;
 			}
 		}
+
+		input:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px #000000 inset;
+      -webkit-text-fill-color: #EAEAEA;
+   }
 
 		button {
 			background-color: $color__theme;
@@ -307,7 +312,7 @@
 
 		@include medium__desktops {
 			font-size: .75rem;
-			width: 80%;
+			width: 70%;
 		}
 	}
 
@@ -398,4 +403,9 @@ footer {
 	@include position (fixed, 50% null null 50%);
 	transform: translate(-50%, -50%);
 	z-index: -10000;
+}
+
+/** MAILCHIMP **/
+.response, #mce-error-response {
+	font-size: .45rem;
 }
